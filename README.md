@@ -70,3 +70,7 @@ pkgcheck scan
 ```
 
 The repository uses thin manifests and inherits the main Gentoo repository.
+
+## License
+
+GPL-2.0; see [`LICENSE`](LICENSE).
