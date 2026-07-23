@@ -14,12 +14,8 @@ Live ebuilds track the Volatoo default branch and intentionally have no
 keywords. Versioned ebuilds will be added when Volatoo publishes source
 releases.
 
-> [!IMPORTANT]
-> The initial Volatoo implementation is published on its development branch
-> but has not yet landed on the default branch. Both ebuilds passed real
-> Portage installation tests against commit
-> `87ca6fe41178e0028b665f88deec6f76e4f7fbb6`; default-branch installation
-> remains blocked until that change is merged.
+Both live ebuilds have passed real Portage installation tests against the
+Volatoo default branch.
 
 ## Add the repository
 
