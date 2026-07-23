@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>chris@lesscrowds.org</email>
+    <name>Chris Su</name>
+  </maintainer>
+  <longdescription lang="en">
+    Applies Volatoo bind, overlay, and synchronized persistence policies,
+    maintains machine-id and SSH host keys, preserves logs, and synchronizes
+    configured state during OpenRC shutdown.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">slchris/Volatoo</remote-id>
+  </upstream>
+</pkgmetadata>
