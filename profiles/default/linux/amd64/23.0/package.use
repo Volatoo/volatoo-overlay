@@ -1,0 +1,6 @@
+# BusyBox is the sole executable embedded by the standalone initramfs.
+sys-apps/busybox static
+
+# Volatoo images and persistence policies require these formats and metadata.
+sys-fs/squashfs-tools zstd
+net-misc/rsync acl xattr

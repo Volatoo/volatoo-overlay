@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>chris@lesscrowds.org</email>
+    <name>Chris Su</name>
+  </maintainer>
+  <longdescription lang="en">
+    Builds a minimal BusyBox initramfs that locates and verifies a Volatoo
+    SquashFS image, copies it into tmpfs, applies persistence policy, and
+    switches into the Gentoo userspace.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">slchris/Volatoo</remote-id>
+  </upstream>
+</pkgmetadata>
