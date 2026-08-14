@@ -8,8 +8,8 @@ PYTHON_COMPAT=( python3_{11..15} )
 inherit git-r3 python-single-r1
 
 DESCRIPTION="Declarative persistence and machine identity for Volatoo"
-HOMEPAGE="https://github.com/slchris/Volatoo"
-EGIT_REPO_URI="https://github.com/slchris/Volatoo.git"
+HOMEPAGE="https://github.com/Volatoo/Volatoo"
+EGIT_REPO_URI="https://github.com/Volatoo/Volatoo.git"
 
 LICENSE="GPL-2"
 SLOT="0"

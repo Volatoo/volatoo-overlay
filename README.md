@@ -1,6 +1,6 @@
 # Volatoo Gentoo overlay
 
-Official Portage overlay for [Volatoo](https://github.com/slchris/Volatoo), a
+Official Portage overlay for [Volatoo](https://github.com/Volatoo/Volatoo), a
 Gentoo-based distribution that copies its root filesystem into tmpfs at boot.
 
 The overlay currently provides live ebuilds for:
@@ -23,7 +23,7 @@ Install `app-eselect/eselect-repository`, then run:
 
 ```sh
 eselect repository add volatoo git \
-  https://github.com/slchris/volatoo-overlay.git
+  https://github.com/Volatoo/volatoo-overlay.git
 emaint sync -r volatoo
 ```
 

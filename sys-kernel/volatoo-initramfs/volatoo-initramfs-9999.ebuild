@@ -6,8 +6,8 @@ EAPI=8
 inherit git-r3
 
 DESCRIPTION="Standalone Volatoo initramfs generator and early userspace"
-HOMEPAGE="https://github.com/slchris/Volatoo"
-EGIT_REPO_URI="https://github.com/slchris/Volatoo.git"
+HOMEPAGE="https://github.com/Volatoo/Volatoo"
+EGIT_REPO_URI="https://github.com/Volatoo/Volatoo.git"
 
 LICENSE="GPL-2"
 SLOT="0"
