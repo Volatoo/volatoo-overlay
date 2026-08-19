@@ -25,7 +25,8 @@ exec docker run --rm --network none \
 	-c 'set -e
 mkdir -p /tmp/installer-source
 (cd /installer && tar --exclude=.git -cf - .) | tar -xf - -C /tmp/installer-source
-git -C /tmp/installer-source init --quiet
+[ ! -e /tmp/installer-source/.git ]
+git init --quiet /tmp/installer-source
 git -C /tmp/installer-source config user.name "Volatoo ebuild test"
 git -C /tmp/installer-source config user.email "test@volatoo.invalid"
 git -C /tmp/installer-source add .
