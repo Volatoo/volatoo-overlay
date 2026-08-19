@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>chris@lesscrowds.org</email>
+    <name>Chris Su</name>
+  </maintainer>
+  <longdescription lang="en">
+    Authenticates signed Volatoo release indexes and content-addressed disk
+    images, plans one explicit destructive target, installs and reads the disk
+    back, expands persistent state, provisions access and writes an auditable
+    installation receipt.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Volatoo/installer</remote-id>
+  </upstream>
+</pkgmetadata>
