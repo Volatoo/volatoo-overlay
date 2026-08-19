@@ -69,7 +69,8 @@ Run repository QA from a Gentoo environment:
 pkgcheck scan
 ```
 
-The repository also provides an OrbStack-only containerized check:
+The repository also provides a containerized check. Local runs require
+OrbStack; GitHub Actions uses its standard hosted Linux Docker context:
 
 ```sh
 ./scripts/test-docker.sh
