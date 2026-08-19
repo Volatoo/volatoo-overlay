@@ -8,11 +8,9 @@ fi
 
 repo_root=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
 installer_root=$(CDPATH='' cd -- "$1" && pwd)
-
-if [ "$(docker context show)" != "orbstack" ]; then
-	printf '%s\n' 'error: Docker context must be orbstack' >&2
-	exit 1
-fi
+# shellcheck source=scripts/require-docker-context.sh
+. "$repo_root/scripts/require-docker-context.sh"
+volatoo_require_docker_context
 if [ ! -f "$installer_root/go.mod" ] || [ -L "$installer_root/go.mod" ]; then
 	printf '%s\n' 'error: installer repository has no safe go.mod' >&2
 	exit 1

@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: overlay-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Check out overlay
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: overlay
+
+      - name: Check out installer
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: Volatoo/installer
+          path: installer
+
+      - name: Check shell sources
+        working-directory: overlay
+        run: shellcheck scripts/*.sh
+
+      - name: Test Docker context policy
+        working-directory: overlay
+        run: scripts/test-docker-context-policy.sh
+
+      - name: Run repository and live ebuild Gates
+        working-directory: overlay
+        run: scripts/test-installer-ebuild-docker.sh ../installer
