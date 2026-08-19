@@ -40,7 +40,8 @@ docker run --rm --network none \
 	volatoo-overlay-test:local \
 	-c 'set -e
 mkdir -p /var/cache/distfiles/git3-src
-git clone --quiet --mirror /installer /var/cache/distfiles/git3-src/Volatoo_installer.git
+git -c safe.directory=/installer -c safe.directory=/installer/.git \
+	clone --quiet --mirror /installer /var/cache/distfiles/git3-src/Volatoo_installer.git
 chown -R portage:portage /var/cache/distfiles/git3-src
 mkdir -p /etc/portage/repos.conf
 printf "[volatoo]\nlocation = /var/db/repos/volatoo\nmasters = gentoo\nauto-sync = no\n" > /etc/portage/repos.conf/volatoo.conf
