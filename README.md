@@ -5,6 +5,8 @@ Gentoo-based distribution that copies its root filesystem into tmpfs at boot.
 
 The overlay currently provides live ebuilds for:
 
+- `sys-apps/volatoo-installer`: the authenticated formal installer for live
+  media and unattended provisioning;
 - `sys-kernel/volatoo-initramfs`: the standalone initramfs generator and early
   userspace;
 - `sys-apps/volatoo-persist`: persistence, machine identity, and its OpenRC
@@ -32,6 +34,7 @@ Allow the live packages explicitly:
 ```text
 # /etc/portage/package.accept_keywords/volatoo
 =sys-apps/volatoo-persist-9999 **
+=sys-apps/volatoo-installer-9999 **
 =sys-kernel/volatoo-initramfs-9999 **
 ```
 
@@ -39,6 +42,7 @@ Install either component with Portage:
 
 ```sh
 emerge --ask =sys-apps/volatoo-persist-9999
+emerge --ask =sys-apps/volatoo-installer-9999
 emerge --ask =sys-kernel/volatoo-initramfs-9999
 ```
 
@@ -63,6 +67,19 @@ Run repository QA from a Gentoo environment:
 
 ```sh
 pkgcheck scan
+```
+
+The repository also provides an OrbStack-only containerized check:
+
+```sh
+./scripts/test-docker.sh
+```
+
+After checking out the installer source, validate the complete live ebuild
+without network access during the package build:
+
+```sh
+./scripts/test-installer-ebuild-docker.sh /path/to/installer
 ```
 
 The repository uses thin manifests and inherits the main Gentoo repository.
